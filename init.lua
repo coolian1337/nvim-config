@@ -1,5 +1,7 @@
 require("mason").setup()
-require('lua/plug')
+require('plugins')
+require('opts')
+require('keys')
 local rt = require("rust-tools")
 local set = vim.opt
 
@@ -20,13 +22,13 @@ set.splitright = true
 set.splitbelow = true
 
 rt.setup({
-	server = {
-		on_attach = function(_, bufnr)
-			vim.keymap.set("n", "<C-space", rt.hover_actions.hover_actions, {buffer = bufnr})
+    server = {
+        on_attach = function(_, bufnr)
+            vim.keymap.set("n", "<C-space", rt.hover_actions.hover_actions, {buffer = bufnr})
 
-			vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr})
-		end,
-	},
+            vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr})
+        end,
+    },
 })
 
 local sign = function(opts)
@@ -126,3 +128,4 @@ require('nvim-treesitter.configs').setup {
         max_file_lines = nil,
     }
 }
+

@@ -1,4 +1,7 @@
-return require('packer').startup(function()
+vim.cmd [[packadd packer.nvim]]
+
+return require('packer').startup(function(use)
+
 	use 'wbthomason/packer.nvim'
 
 	use 'williamboman/mason.nvim'
@@ -19,4 +22,6 @@ return require('packer').startup(function()
     use 'hrsh7th/vim-vsnip'
 
     use 'nvim-treesitter/nvim-treesitter'
+
+    use {'puremourning/vimspector', run = '/install_gadjet.py --enable-c --enable-python'}
 end)
