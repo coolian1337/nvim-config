@@ -2,13 +2,13 @@ vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
 
-	use 'wbthomason/packer.nvim'
+    use 'wbthomason/packer.nvim'
 
-	use 'williamboman/mason.nvim'
-	use 'williamboman/mason-lspconfig.nvim'
-
-	use 'neovim/nvim-lspconfig'
-	use 'simrat39/rust-tools.nvim'
+    use 'williamboman/mason.nvim'
+    use 'williamboman/mason-lspconfig.nvim'
+    
+    use 'neovim/nvim-lspconfig'
+    use 'simrat39/rust-tools.nvim'
     
     use 'hrsh7th/nvim-cmp'
     
@@ -27,7 +27,7 @@ return require('packer').startup(function(use)
 
     use 'voldikss/vim-floaterm'
 
-    use 'nvim-telescope/telescope.nvim'
+    use {'nvim-telescope/telescope.nvim', requires = { {'nvim-lua/plenary.nvim'} }}
     use 'kyazdani42/nvim-tree.lua'
     use 'preservim/tagbar'
     use { 'folke/todo-comments.nvim', requires = "nvim-lua/plenary.nvim", config = function () require("todo-comments").setup {} end }
@@ -44,4 +44,17 @@ return require('packer').startup(function(use)
     use 'danilamihailov/beacon.nvim'
     use 'kyazdani42/nvim-web-devicons'
     use 'lewis6991/impatient.nvim'
+
+    use 'tpope/vim-fugitive'
+    use 'EdenEast/nightfox.nvim'
+
+    use 'nanozuki/tabby.nvim'
+    use {
+        'lewis6991/gitsigns.nvim',
+        config = function()
+            require('gitsigns').setup()
+        end
+    }
+
+    use 'feline-nvim/feline.nvim'
 end)
