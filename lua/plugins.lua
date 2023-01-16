@@ -23,5 +23,25 @@ return require('packer').startup(function(use)
 
     use 'nvim-treesitter/nvim-treesitter'
 
-    use {'puremourning/vimspector', run = '/install_gadjet.py --enable-c --enable-python'}
+    use 'puremourning/vimspector'
+
+    use 'voldikss/vim-floaterm'
+
+    use 'nvim-telescope/telescope.nvim'
+    use 'kyazdani42/nvim-tree.lua'
+    use 'preservim/tagbar'
+    use { 'folke/todo-comments.nvim', requires = "nvim-lua/plenary.nvim", config = function () require("todo-comments").setup {} end }
+    use 'folke/trouble.nvim'
+    use 'folke/lsp-colors.nvim'
+
+    use 'lukas-reineke/indent-blankline.nvim'
+    use { 'windwp/nvim-autopairs', config = function() require("nvim-autopairs").setup {} end }
+    use 'tpope/vim-surround'
+    use 'PRethy/vim-illuminate'
+    use { 'numToStr/Comment.nvim', config = function() require('Comment').setup() end }
+
+    use { 'm-demare/hlargs.nvim', requires = { 'nvim-treesitter/nvim-treesitter' } }
+    use 'danilamihailov/beacon.nvim'
+    use 'kyazdani42/nvim-web-devicons'
+    use 'lewis6991/impatient.nvim'
 end)

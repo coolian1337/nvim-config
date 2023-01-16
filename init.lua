@@ -5,6 +5,11 @@ require('keys')
 local rt = require("rust-tools")
 local set = vim.opt
 
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+vim.opt.termguicolors = true
+
 set.tabstop = 4
 set.shiftwidth = 4
 set.softtabstop = 4
@@ -128,4 +133,24 @@ require('nvim-treesitter.configs').setup {
         max_file_lines = nil,
     }
 }
+
+require('lsp-colors').setup({
+    Error = "#db4b4b",
+    Warning = "#e0af68",
+    Information = "#0db9d7",
+    Hint = "#10B981"
+})
+
+require("indent_blankline").setup {
+    -- for example, context is off by default, use this to turn it on
+    show_current_context = true,
+    show_current_context_start = true,
+}
+
+require('hlargs').setup()
+
+require('impatient')
+
+require("nvim-tree").setup()
+
 
