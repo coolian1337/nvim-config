@@ -12,6 +12,12 @@ end
 
 vim.g.mapleader = ' '
 
+-- tree
+map('n', '<leader>tt', '<cmd>NvimTreeToggle')
+map('n', '<leader>tf', '<cmd>NvimTreeFocus')
+map('n', '<leader>ts', '<cmd>NvimTreeFindFile')
+map('n', '<leader>tc', '<cmd>NvimTreeCollapse')
+
 -- Vimspector
 vim.cmd([[
 nmap <F9> <cmd>call vimspector#Launch()<cr>
