@@ -37,7 +37,7 @@ return require('packer').startup(function(use)
     use 'lukas-reineke/indent-blankline.nvim'
     use { 'windwp/nvim-autopairs', config = function() require("nvim-autopairs").setup {} end }
     use 'tpope/vim-surround'
-    use 'PRethy/vim-illuminate'
+    use 'RRethy/vim-illuminate'
     use { 'numToStr/Comment.nvim', config = function() require('Comment').setup() end }
 
     use { 'm-demare/hlargs.nvim', requires = { 'nvim-treesitter/nvim-treesitter' } }
