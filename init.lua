@@ -15,7 +15,7 @@ local fmt = string.format
 local function store_fn(fn)
   table.insert(store, fn)
   local index = #store
-  return fmt([[lua require('eden.core.event')._exec(%d)]], index)
+  return fmt([[lua require('event')._exec(%d)]], index)
 end
 
 local cmd = vim.api.nvim_command
