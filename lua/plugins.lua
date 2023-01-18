@@ -58,4 +58,6 @@ return require('packer').startup(function(use)
 
     use 'feline-nvim/feline.nvim'
     use 'nvim-lua/lsp-status.nvim'
+
+    use 'wakatime/vim-wakatime'
 end)
