@@ -72,4 +72,4 @@ map('n', '<C-j>', '<C-w>j')
 map('n', '<C-k>', '<C-w>k')
 map('n', '<C-l>', '<C-w>l')
 
-map('n', 'ö', 'vim.lsp.buf.code_action')
+map('n', 'ü', 'vim.lsp.buf.code_action')
