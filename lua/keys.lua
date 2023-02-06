@@ -10,6 +10,17 @@ local function map(mode, lhs, rhs, opts)
     vim.keymap.set(mode, lhs, rhs, options)
 end
 
+local function nmap(mode, lhs, rhs, opts)
+    local options = { noremap = false, silent = true }
+    if opts then
+        if opts.desc then
+            opts.desc = "keymaps.lua: " .. opts.desc
+        end
+        options = vim.tbl_extend('force', options, opts)
+    end
+    vim.keymap.set(mode, lhs, rhs, options)
+end
+
 vim.g.mapleader = ' '
 
 -- tree
@@ -46,6 +57,7 @@ map('n', '<leader>fg', builtin.live_grep, {})
 map('n', '<leader>fb', builtin.buffers, {})
 map('n', '<leader>fh', builtin.help_tags, {})
 
+-- tabs keybinds
 map('n', '<leader>tn', ':$tabnew<CR>')
 map('n', '<leader>tc', ':tabclose<CR>')
 map('n', '<leader>to', ':tabonly<CR>')
@@ -58,13 +70,13 @@ map('n', '<leader>tmn', ':+tabmove<CR>')
 map('i', '<A-j>', '<Esc>:m .+1<CR>==gi')
 map('i', '<A-k>', '<Esc>:m .-2<CR>==gi')
 map('v', '<A-j>', "<Esc>:m '>+1<CR>gv=gv")
-map('v', '<A-j>', "<Esc>:m '<-2<CR>gv=gv")
+map('v', '<A-k>', "<Esc>:m '<-2<CR>gv=gv")
 
 -- move split panes
-map('n', '<A-h', '<C-W>H')
-map('n', '<A-j', '<C-W>J')
-map('n', '<A-k', '<C-W>K')
-map('n', '<A-l', '<C-W>L')
+nmap('n', '<A-h', '<C-W>H')
+nmap('n', '<A-j', '<C-W>J')
+nmap('n', '<A-k', '<C-W>K')
+nmap('n', '<A-l', '<C-W>L')
 
 -- move between panes
 map('n', '<C-h>', '<C-w>h')
@@ -72,4 +84,10 @@ map('n', '<C-j>', '<C-w>j')
 map('n', '<C-k>', '<C-w>k')
 map('n', '<C-l>', '<C-w>l')
 
-map('n', 'ü', 'vim.lsp.buf.code_action')
+-- change size of panes
+nmap('n', '<C-up', '<C-w>+')
+nmap('n', '<C-down', '<C-w>-')
+nmap('n', '<C-left', '<C-w>>')
+nmap('n', '<C-right', '<C-w><')
+
+nmap('n', 'ö', 'vim.lsp.buf.code_action')
