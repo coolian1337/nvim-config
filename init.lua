@@ -223,7 +223,17 @@ require('hlargs').setup()
 
 require('impatient')
 
-require("nvim-tree").setup()
+require("nvim-tree").setup({
+    sort_by = "case_sensitive",
+    view = {
+        width = 30,
+        mappings = {
+            list = {
+                { key = "CR", action = "tabnew", silent = "true"}
+            },
+        },
+    },
+})
 
 -- Tabby tabline
 local filename = require("tabby.filename")
