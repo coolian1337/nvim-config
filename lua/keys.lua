@@ -2,7 +2,7 @@
 local function map(mode, lhs, rhs, opts)
     local options = { noremap = true, silent = true }
     if opts then
-        if opts.desc then
+    if opts.desc then
             opts.desc = "keymaps.lua: " .. opts.desc
         end
         options = vim.tbl_extend('force', options, opts)
@@ -73,10 +73,10 @@ map('v', '<A-j>', "<Esc>:m '>+1<CR>gv=gv")
 map('v', '<A-k>', "<Esc>:m '<-2<CR>gv=gv")
 
 -- move split panes
-nmap('n', '<A-h', '<C-W>H')
-nmap('n', '<A-j', '<C-W>J')
-nmap('n', '<A-k', '<C-W>K')
-nmap('n', '<A-l', '<C-W>L')
+map('n', '<A-h>', '<C-W>h')
+map('n', '<A-j>', '<C-W>j')
+map('n', '<A-k>', '<C-W>k')
+map('n', '<A-l>', '<C-W>l')
 
 -- move between panes
 map('n', '<C-h>', '<C-w>h')
@@ -85,9 +85,9 @@ map('n', '<C-k>', '<C-w>k')
 map('n', '<C-l>', '<C-w>l')
 
 -- change size of panes
-nmap('n', '<C-up', '<C-w>+')
-nmap('n', '<C-down', '<C-w>-')
-nmap('n', '<C-left', '<C-w>>')
-nmap('n', '<C-right', '<C-w><')
+map('n', '<C-up>', '1<C-w>+')
+map('n', '<C-down>', '1<C-w>-')
+map('n', '<C-left>', '1<C-w>>')
+map('n', '<C-right>', '1<C-w><')
 
 nmap('n', 'ö', 'vim.lsp.buf.code_action')
