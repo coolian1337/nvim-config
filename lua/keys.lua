@@ -30,14 +30,13 @@ map('n', '<leader>ts', '<cmd>NvimTreeFindFile<CR>')
 map('n', '<leader>tc', '<cmd>NvimTreeCollapse<CR>')
 
 -- Vimspector
-vim.cmd([[
-nmap <F9> <cmd>call vimspector#Launch()<cr>
-nmap <F5> <cmd>call vimspector#StepOver()<cr>
-nmap <F8> <cmd>call vimspector#Reset()<cr>
-nmap <F11> <cmd>call vimspector#StepOver()<cr>")
-nmap <F12> <cmd>call vimspector#StepOut()<cr>")
-nmap <F10> <cmd>call vimspector#StepInto()<cr>")
-]])
+map('n', '<F9>', '<cmd>call vimspector#Launch()<cr>')
+map('n', '<F5>', '<cmd>call vimspector#StepOver()<cr>')
+map('n', '<F8>', '<cmd>call vimspector#Reset()<cr>')
+map('n', '<F11>', '<cmd>call vimspector#StepOver()<cr>')
+map('n', '<F12>', '<cmd>call vimspector#StepOut()<cr>')
+map('n', '<F10>', '<cmd>call vimspector#StepInto()<cr>')
+
 map('n', "Db", ":call vimspector#ToggleBreakpoint()<cr>")
 map('n', "Dw", ":call vimspector#AddWatch()<cr>")
 map('n', "De", ":call vimspector#Evaluate()<cr>")
@@ -91,3 +90,5 @@ map('n', '<C-left>', '1<C-w>>')
 map('n', '<C-right>', '1<C-w><')
 
 nmap('n', 'ö', 'vim.lsp.buf.code_action')
+
+map('c', 'git', 'Git')

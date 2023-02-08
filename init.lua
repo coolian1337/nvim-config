@@ -95,7 +95,6 @@ set.splitright = true
 set.splitbelow = true
 set.showtabline = 2
 set.scrolloff=10
-set.mouse=
 
 rt.setup({
     server = {
